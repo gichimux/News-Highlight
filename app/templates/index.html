@@ -4,7 +4,7 @@
         
         <div class="container-fluid">
                 <div class="row">
-                        <h2 style="text-align: center;color:#0CF;">General news </h2><hr>
+                        <h2 style="text-align: center;color:#0CF;"> The World Today </h2><hr>
                         {% for all_news in general %}
                         <div class="col-md-2">
                                 <div class="thumbnail">
@@ -22,7 +22,7 @@
 
          <div class="container-fluid">
             <div class="row">
-                            <h2 style="text-align: center;color:#0CF;">Business news </h2><hr>
+                            <h2 style="text-align: center;color:#0CF;">Business News </h2><hr>
                             {% for all_news in business %}
                             <div class="col-md-2">
                                     <div class="thumbnail">
@@ -39,3 +39,21 @@
             </div>
     </div>
     <hr>
+
+    <div class="container-fluid">
+        <div class="row">
+                <h2 style="text-align: center;color:#0CF;">Technology news </h2><hr>
+                {% for all_news in technology %}
+                <div class="col-md-2">
+                        <div class="thumbnail">
+                                <div class="details">
+                                        <h4>{{all_news.name}}</a></h4>
+                                        <p>{{all_news.description | truncate(100)}}</p>
+                                        <p><a href="/articles/{{ all_news.id}}">Read {{all_news.name}} Articles</a></p>
+                                </div>
+                        </div>
+                </div>
+        {% endfor %}
+        </div>
+</div>
+<hr>
