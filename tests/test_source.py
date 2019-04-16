@@ -1,5 +1,5 @@
 import unittest
-from app.models import News
+from app.models import Source
 
 class TestNews(unittest.TestCase):
     '''
@@ -9,11 +9,11 @@ class TestNews(unittest.TestCase):
         '''
         Test class to run before other tests
         '''
-        self.new_news_source = News('xyz','gichi','https://xyz.com/','xyz news is the true source', 'usa', 'general', 'xyz-news')
+        self.new_news_source = Source('xyz','gichi','https://xyz.com/','xyz news is the true source', 'usa', 'general', 'xyz-news')
     
     def test_instance(self):
         
-        self.assertTrue(isinstance(self.new_news_source,News))
+        self.assertTrue(isinstance(self.new_news_source,Source))
     
     def test_to_check_instance_variables(self):
        
