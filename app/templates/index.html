@@ -1,96 +1,49 @@
         {% extends 'base.html' %}
         {% block content %}
+        {%import 'macros.html' as macro %}
         
         
         <div class="container-fluid">
                 <div class="row">
-                        <h2 style="text-align: center;color:#0CF;"> The World Today </h2><hr>
-                        {% for all_news in general %}
-                        <div class="col-md-2">
-                                <div class="thumbnail">
-                                        <div class="details">
-                                                <h4>{{all_news.name}}</a></h4>
-                                                <p>{{all_news.description | truncate(100)}}</p>
-                                                <p><a href="/articles/{{ all_news.id}}">Read {{all_news.name}} Articles</a></p>
-                                        </div>
-                                </div>
-                        </div>
-                        {% endfor %}
+                        <h2 style="text-align: center;color:#0CF;"> The World Today </h2>
+                        <hr>                        
+                        {% macro.newsCategory(general)%}                      
                 </div>
          </div>
          <hr>
 
          <div class="container-fluid">
             <div class="row">
-                            <h2 style="text-align: center;color:#0CF;">Business News </h2><hr>
-                            {% for all_news in business %}
-                            <div class="col-md-2">
-                                    <div class="thumbnail">
-                                            <div class="details">
-                                                    <h4>{{all_news.name}}</h4>
-                                                    <p>{{all_news.description | truncate(100)}}</p>
-                                                    <p><a href="/articles/{{ all_news.id}}">Read {{all_news.name}} Articles</a></p>
-
-                                            </div>
-
-                                    </div>
-                            </div>
-                            {% endfor %}
+                <h2 style="text-align: center;color:#0CF;">Business News </h2>
+                <hr>
+                {% macro.newsCategory(business)%}
             </div>
     </div>
     <hr>
 
     <div class="container-fluid">
         <div class="row">
-                <h2 style="text-align: center;color:#0CF;">Technology news </h2><hr>
-                {% for all_news in technology %}
-                <div class="col-md-2">
-                        <div class="thumbnail">
-                                <div class="details">
-                                        <h4>{{all_news.name}}</a></h4>
-                                        <p>{{all_news.description | truncate(100)}}</p>
-                                        <p><a href="/articles/{{ all_news.id}}">Read {{all_news.name}} Articles</a></p>
-                                </div>
-                        </div>
-                </div>
-        {% endfor %}
-        </div>
-</div>
-<hr>
-
-<div class="container-fluid">
-    <div class="row">
-             <h2 style="text-align: center;color:#0CF;">In the World Of Sports: </h2><hr>
-             {% for all_news in sports %}
-             <div class="col-md-2">
-                     <div class="thumbnail">
-                             <div class="details">
-                                     <h4>{{all_news.name}}</a></h4>
-                                     <p>{{all_news.description | truncate(100)}}</p>
-                                     <p><a href="/articles/{{ all_news.id}}">Read {{all_news.name}} Articles</a></p>
-                           </div>
-                   </div>
-           </div>
-                    {% endfor %}
-   </div>
-</div>
-<hr>
-
-<h2 style="text-align: center;color:#0CF;">Science news </h2>
-<hr>
-{% for all_news in science %}
-    <div class="col-md-2">
-    <div class="thumbnail">
-        <div class="details">
-                <h4>{{all_news.name}}</a></h4>
-                <p>{{all_news.description | truncate(100)}}</p>
-                <p><a href="/articles/{{ all_news.id}}">Read {{all_news.name}} Articles</a></p>
+                <h2 style="text-align: center;color:#0CF;">Technology news </h2>
+                <hr>
+                {% macro.newsCategory(technology)%}
         </div>
     </div>
-    </div>
-    {% endfor %}
-    </div>
-    </div>
-<hr>
+    <hr>
 
-{%  endblock %}
+    <div class="container-fluid">
+        <div class="row">
+             <h2 style="text-align: center;color:#0CF;">In the World Of Sports: </h2>
+             <hr>
+             {% macro.newsCategory(sports)%}
+    </div>
+    </div>
+    <hr>
+
+    <h2 style="text-align: center;color:#0CF;">Science news </h2>
+    <hr>
+    {% macro.newsCategory(science)%}
+    </div>
+    </div>
+    <hr>
+
+    {%  endblock %}
