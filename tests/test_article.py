@@ -1,5 +1,5 @@
 import unittest
-from app.models import Articles
+from app.models import Article
 
 class TestArticles(unittest.TestCase):
     '''
@@ -9,10 +9,10 @@ class TestArticles(unittest.TestCase):
         '''
         Test class to run before other tests
         '''
-        self.new_article = Articles('Title goes here','Title is great ...','https://google.com/images','2018-05-12T13:31:03Z', 'liz', 'buzzfeed.com')
+        self.new_article = Article('Title goes here','Title is great ...','https://google.com/images','2018-05-12T13:31:03Z', 'liz', 'buzzfeed.com')
     
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_article,Articles))
+        self.assertTrue(isinstance(self.new_article,Article))
     
     def test_to_check_instance_variables(self):
         self.assertEquals(self.new_article.title,'Title goes here')
