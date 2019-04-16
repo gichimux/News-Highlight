@@ -1,6 +1,6 @@
-class Articles:
+class Article:
     '''
-    Articles class to define article objects
+    News Articles class to define article objects
     '''
     def __init__(self, title, description, image, timePublished, author, url):
         self.title = title
@@ -13,9 +13,9 @@ class Articles:
 
 
 
-class News:
+class Source:
     '''
-    News class to define news objects
+    News source class to define news objects
     '''
     def __init__(self, name, author, url,description, country,category, id):
         self.name = name
